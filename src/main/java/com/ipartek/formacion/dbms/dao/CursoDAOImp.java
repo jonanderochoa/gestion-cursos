@@ -124,10 +124,10 @@ public class CursoDAOImp implements CursoDAO {
 
 	@Override
 	public void delete(int codigo) {
-		LOGGER.info("deleteCurso");
+		LOGGER.info("cursoDelete");
 		//Se crea una instancia de SimpleJdbcCall pasandole la conexion
 		this.jdbcCall = new SimpleJdbcCall(dataSource);
-		final String SQL = "";
+		final String SQL = "cursoDelete";
 		//Le pasamos la cadena con el nombre del procedimiento almacenado a la instancia de SimpleJdbcCall
 		jdbcCall.withProcedureName(SQL);
 		//Creamos un mapa con los parametros del procedimiento almacenado

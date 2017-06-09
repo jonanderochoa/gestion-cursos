@@ -40,7 +40,7 @@ public class CursoController {
 	private static final Logger LOGGER = LoggerFactory.getLogger(CursoController.class);
 	//Que datos carga y a que vista
 	ModelAndView mav = null;
-	//Accede al objeto del servlet-context (name = "id")
+	//Accede al objeto del servlet-context
 	@Resource(name = "cursoValidator")
 	private Validator validator = null;
 	
@@ -60,12 +60,12 @@ public class CursoController {
 	 * @param model Modelo al que se le añade el curso y la vista
 	 * @return Devuelve el String donde verlo
 	 */
-	@RequestMapping(value = "/addCurso")
+	@RequestMapping(value="/addCurso")
 	public String addCurso(Model model){
 		LOGGER.info("addCursoController");
 		//Añadimos un objeto en blanco pero no nulo
 		model.addAttribute("curso", new Curso());
-		return "cursos/curso";
+		return "curso";
 	}
 	
 	
@@ -77,7 +77,7 @@ public class CursoController {
 	public ModelAndView getAll(){
 		LOGGER.info("getAllController");
 		//Vista a la que se dirige
-		mav = new ModelAndView("cursos/cursos");
+		mav = new ModelAndView("cursos");
 		//carga la lista
 		List<Curso> cursos = cS.getAll();
 		//Añade un objeto al mav con la lista de cursos y la llama listadoUsuarios
@@ -93,7 +93,7 @@ public class CursoController {
 	@RequestMapping(value = "/{codigo}")
 	public ModelAndView getById(@PathVariable("codigo") int codigo){
 		LOGGER.info("getByIdController");
-		mav = new ModelAndView("cursos/curso");
+		mav = new ModelAndView("curso");
 		Curso curso = cS.getById(codigo);
 		mav.addObject("curso", curso);
 		return mav;
@@ -109,7 +109,7 @@ public class CursoController {
 		String destino = "";
 		if(bindingResult.hasErrors()){ //Si hay errores
 			LOGGER.info("cursos tiene errores");
-			destino = "cursos/curso";
+			destino = "curso";
 		}else{
 			destino = "redirect:/cursos";
 			if(curso.getCodigo() > Curso.CODIGO_NULO){

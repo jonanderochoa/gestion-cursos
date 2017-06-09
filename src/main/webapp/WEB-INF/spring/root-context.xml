@@ -21,4 +21,14 @@
 		<!-- El property name es como un setter que devuelve una conexion -->
 		<property name="dataSource" ref="mysqlDataSource"/>
 	</bean>
+	
+	<!-- INTERNACIONALIZACION Y FUENTES DE LOS MENSAJES -->
+	<bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
+		<property name="basenames">
+			<list>
+				<value>messages/validationMessages</value>
+				<value>messages/viewtext</value>
+			</list>
+		</property>
+	</bean>
 </beans>
