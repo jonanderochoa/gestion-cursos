@@ -3,12 +3,15 @@
  */
 package com.ipartek.formacion.controller.validator;
 
+import javax.inject.Inject;
+
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.validation.Errors;
 import org.springframework.validation.ValidationUtils;
 import org.springframework.validation.Validator;
 
 import com.ipartek.formacion.dbms.persistence.Curso;
+import com.ipartek.formacion.service.interfaces.CursoService;
 
 /**
  * Clase encargada de validar Curso
@@ -25,6 +28,8 @@ public class CursoValidator implements Validator {
 	private int nomCursoTamMin;
 	@Value("${curso.nomcurso.size.max}")
 	private int nomCursoTamMax;
+	@Inject
+	private CursoService cS;
 	
 	@Override
 	public boolean supports(Class<?> paramClass) {
@@ -45,8 +50,25 @@ public class CursoValidator implements Validator {
 		if(curso.getCodigo() < Curso.CODIGO_NULO){
 			errors.rejectValue("codigo", "form.codigoNegativo", new Object[]{ "'codigo" }, "no puede ser menor que "+ Curso.CODIGO_NULO);
 		}
-		// Valida la longitud del codcurso sea valida para la bbdd
+		// Valida la longitud del codigo de curso
+		if (curso.getCodcurso().length() < codCursoTamMin || curso.getCodcurso().length() > codCursoTamMax) {
+			errors.rejectValue("codcurso", "form.longitudCodigoIncorrecta", new Object[] { codCursoTamMin, codCursoTamMax },
+					"El codigo de curso tiene que ocupar entre " + codCursoTamMin + " y " + codCursoTamMax + " caracteres.");
+		}
+		// Valida la longitud del nombre del curso
+		if (curso.getNomcurso().length() < nomCursoTamMin || curso.getNomcurso().length() > nomCursoTamMax) {
+			errors.rejectValue("nomcurso", "form.longitudNombreIncorrecta",	new Object[] { nomCursoTamMin, nomCursoTamMax }, 
+					"El nombre del curso tienen que ocupar entre "+ nomCursoTamMin + " y " + nomCursoTamMax + " caracteres.");
+		}
 		
+		
+		//Valida que el curso sea valido
+        Curso aux = cS.getByCodigo(curso.getCodcurso());
+        if ((curso.getCodcurso() != null && aux != null)
+                || (!curso.equals(aux) && curso.getCodcurso().equalsIgnoreCase(aux.getCodcurso()))) {
+            errors.rejectValue("codcurso", "form.codigoExiste", new Object[] { curso.getCodcurso() },
+                    "el codigo ya existe en la base de datos");
+        }
 	}
 
 }

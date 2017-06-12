@@ -28,12 +28,24 @@ public interface CursoService {
 	public List<Curso> getAll();
 	
 	/**
+	 * Muestra los diez ultimos cursos creados
+	 * @return List<Curso> Devuelve la lista de los diez ultimos cursos
+	 */
+	public List<Curso> diezUltimos();
+	
+	/**
 	 * Devuelve el curso que contiene un codigo especifico
 	 * @param codigo del curso que queremos ver
 	 * @return curso que devuelve
 	 */
 	public Curso getById(int codigo);
 	
+	/**
+	 * Devuelve el curso que contiene un codigo especifico
+	 * @param codigo del curso que queremos ver
+	 * @return curso que devuelve
+	 */
+	public Curso getByCodigo(String codigo);
 	/**
 	 * Sustituye el curso por el que le entregamos
 	 * @param curso que le entregamos

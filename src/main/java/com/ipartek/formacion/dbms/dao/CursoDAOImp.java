@@ -137,4 +137,34 @@ public class CursoDAOImp implements CursoDAO {
 		//Ejecutamos la consulta dandole los parametros del mapa in
 		jdbcCall.execute(in);
 	}
+
+	@Override
+	public List<Curso> diezUltimos() {
+		LOGGER.info("diezUltimosDAO");
+		final String SQL = "call cursoDiezUltimos()";
+		List<Curso> cursos = null;
+		try{
+			cursos = jdbcTemplate.query(SQL, new CursoMapper());
+			LOGGER.info(cursos.toString());
+		}catch(EmptyResultDataAccessException e){
+			cursos = null;
+			LOGGER.error(e.getMessage());
+		}
+		return cursos;
+	}
+
+	@Override
+	public Curso getByCodigo(String codigo) {
+		LOGGER.info("getByCodigoDAO");
+		Curso curso = null;
+		final String SQL = "call cursogetByCodigo(?);";
+		try{
+			curso = jdbcTemplate.queryForObject(SQL, new CursoMapper(), new Object[] { codigo });
+			LOGGER.info(curso.toString());
+		}catch(EmptyResultDataAccessException e){
+			curso = null;
+			LOGGER.error("No se ha encontrado usuario para el codigo: "+codigo+" "+e.getMessage());
+		}
+		return curso;
+	}
 }

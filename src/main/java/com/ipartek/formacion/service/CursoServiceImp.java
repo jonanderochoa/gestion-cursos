@@ -57,4 +57,22 @@ public class CursoServiceImp implements CursoService {
 		cursoDAO.delete(codigo);
 	}
 
+	/* (non-Javadoc)
+	 * @see com.ipartek.formacion.service.interfaces.CursoService#diezUltimos()
+	 */
+	@Override
+	public List<Curso> diezUltimos() {
+		LOGGER.info("diezUltimosService");
+		return cursoDAO.diezUltimos();
+	}
+
+	/* (non-Javadoc)
+	 * @see com.ipartek.formacion.service.interfaces.CursoService#getByCodigo(java.lang.String)
+	 */
+	@Override
+	public Curso getByCodigo(String codigo) {
+		LOGGER.info("getByCodigoService");
+		return cursoDAO.getByCodigo(codigo);
+	}
+
 }

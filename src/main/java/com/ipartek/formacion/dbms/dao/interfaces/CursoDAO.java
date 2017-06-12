@@ -28,11 +28,23 @@ public interface CursoDAO extends DAOSetter {
 	public List<Curso> getAll();
 	
 	/**
+	 * Muestra los diez ultimos cursos creados
+	 * @return List<Curso> Devuelve la lista de los diez ultimos cursos
+	 */
+	public List<Curso> diezUltimos();
+	/**
 	 * Muestra el curso con el codigo entregado como parametro
 	 * @param codigo Codigo del curso que queremos ver
 	 * @return Curso con ese codigo
 	 */
 	public Curso getById(int codigo);
+	
+	/**
+	 * Devuelve el curso que contiene un codigo especifico
+	 * @param codigo del curso que queremos ver
+	 * @return curso que devuelve
+	 */
+	public Curso getByCodigo(String codigo);
 	
 	/**
 	 * Actualizamos un curso
@@ -46,4 +58,6 @@ public interface CursoDAO extends DAOSetter {
 	 * @param codigo Codigo del curso que queremos eliminar
 	 */
 	public void delete(int codigo);
+	
+	
 }

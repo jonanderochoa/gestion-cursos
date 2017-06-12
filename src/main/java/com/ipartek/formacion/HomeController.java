@@ -2,8 +2,10 @@ package com.ipartek.formacion;
 
 import java.text.DateFormat;
 import java.util.Date;
+import java.util.List;
 import java.util.Locale;
 
+import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -18,6 +20,10 @@ import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
+
+import com.ipartek.formacion.dbms.persistence.Curso;
+import com.ipartek.formacion.service.interfaces.CursoService;
 
 /**
  * Handles requests for the application home page.
@@ -25,22 +31,30 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 public class HomeController {
 	
-	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
+	@Inject
+	private CursoService cS;
+	//Que datos carga y a que vista
+	ModelAndView mav = null;
+	private static final Logger LOGGER = LoggerFactory.getLogger(HomeController.class);
+	
 	
 	/**
-	 * Simply selects the home view to render by returning its name.
+	 * Metodo que muestra todos los cursos
+	 * @return mav Un ModelAndView con la lista de cursos y la vista
 	 */
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home(Locale locale, Model model) {
-		logger.info("Welcome home! The client locale is {}.", locale);
-		
+		LOGGER.info("DiezUltimosController");
+		//Vista a la que se dirige
+		mav = new ModelAndView("home");
+		//carga la lista
+		List<Curso> cursos = cS.diezUltimos();
+		//Añade un objeto al mav con la lista de cursos y la llama listadoUsuarios
+		model.addAttribute("listadocursos", cursos);
 		Date date = new Date();
 		DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
-		
 		String formattedDate = dateFormat.format(date);
-		
 		model.addAttribute("serverTime", formattedDate );
-		
 		return "home";
 	}
 	
