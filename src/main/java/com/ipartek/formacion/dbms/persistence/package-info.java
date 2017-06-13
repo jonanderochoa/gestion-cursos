@@ -1,5 +1,5 @@
 /**
- * 
+ *  Este paquete contiene todas las clases de persistencia de la aplicacion
  */
 /**
  * @author Jon Ander Ochoa Ruiz

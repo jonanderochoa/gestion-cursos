@@ -1,5 +1,5 @@
 /**
- * 
+ * Paquete que contiene las interfaces de la capa DAO
  */
 /**
  * @author Jon Ander Ochoa Ruiz

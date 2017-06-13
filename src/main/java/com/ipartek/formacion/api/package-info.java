@@ -1,5 +1,5 @@
 /**
- * 
+ * Esta carpeta contiene los servicios web REST tanto del lado del servidor como del cliente
  */
 /**
  * @author Jon Ander Ochoa Ruiz

@@ -1,13 +1,14 @@
 /**
  * 
  */
-package com.ipartek.formacion.api;
+package com.ipartek.formacion.api.restfulservers;
 
 import java.util.List;
 
 import javax.inject.Inject;
 
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -20,7 +21,7 @@ import com.ipartek.formacion.service.interfaces.CursoService;
 
 /**
  * Este controlador se encarga de gestionar un servicio REST de lado del servidor.
- * Contiene los metodos necesarios para ver los valores del buscador
+ * Contiene los metodos necesarios para ver los cursos del buscador
  * @author Jon Ander Ochoa Ruiz
  * 13 de jun. de 2017
  */
@@ -37,7 +38,7 @@ public class BuscadorRestController {
 	 * @param busqueda Introduce la cadena que desea buscar
 	 * @return Devuelve el o los cursos que coinciden y el codigo http
 	 */
-	@RequestMapping(value = "/{busqueda}", method = RequestMethod.GET)
+	@RequestMapping(value = "/{busqueda}", method = RequestMethod.GET, produces = { MediaType.APPLICATION_JSON_VALUE })
 	public ResponseEntity<List<Curso>> getByBusqueda(@PathVariable("busqueda") String busqueda){
 		List<Curso> cursos = cS.getByNombre(busqueda);
 		ResponseEntity<List<Curso>> response = null;

@@ -1,5 +1,5 @@
 /**
- * 
+ * Paquete que contiene las interfaces y clases que implementan la capa service
  */
 /**
  * @author Jon Ander Ochoa Ruiz
