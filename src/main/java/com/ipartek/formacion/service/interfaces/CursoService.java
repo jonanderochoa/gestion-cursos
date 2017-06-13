@@ -41,6 +41,13 @@ public interface CursoService {
 	public Curso getById(int codigo);
 	
 	/**
+	 * Devuelve una lista de cursos que contiene un nombre parecido
+	 * @param nombre o parte del nombre del curso que queremos ver
+	 * @return Lista de cursos que devuelve
+	 */
+	public List<Curso> getByNombre(String nombreCurso);
+	
+	/**
 	 * Devuelve el curso que contiene un codigo especifico
 	 * @param codigo del curso que queremos ver
 	 * @return curso que devuelve

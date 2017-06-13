@@ -167,4 +167,19 @@ public class CursoDAOImp implements CursoDAO {
 		}
 		return curso;
 	}
+
+	@Override
+	public List<Curso> getByNombre(String nombreCurso) {
+		LOGGER.info("getByNombreDAO");
+		final String SQL = "call cursogetByName(?)";
+		List<Curso> cursos = null;
+		try{
+			cursos = jdbcTemplate.query(SQL, new CursoMapper(), new Object[] { nombreCurso });
+			LOGGER.info(cursos.toString());
+		}catch(EmptyResultDataAccessException e){
+			cursos = null;
+			LOGGER.error(e.getMessage());
+		}
+		return cursos;
+	}
 }

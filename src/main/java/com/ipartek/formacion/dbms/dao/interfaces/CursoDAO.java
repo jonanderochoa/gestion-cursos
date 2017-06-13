@@ -47,6 +47,13 @@ public interface CursoDAO extends DAOSetter {
 	public Curso getByCodigo(String codigo);
 	
 	/**
+	 * Devuelve una lista de cursos que contiene un nombre parecido
+	 * @param nombre o parte del nombre del curso que queremos ver
+	 * @return Lista de cursos que devuelve
+	 */
+	public List<Curso> getByNombre(String nombreCurso);
+	
+	/**
 	 * Actualizamos un curso
 	 * @param curso Curso que queremos modificar
 	 * @return Curso modificado
