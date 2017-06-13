@@ -14,7 +14,6 @@
 		<div id="cabecera" class="row">
 				<div class="col-xs-2">Código del curso</div>
 				<div class="col-xs-2">Nombre del curso</div>
-				<div class="col-xs-2"></div>
 			</div>
 			
 				<c:choose>
@@ -23,10 +22,6 @@
 						<div class="row">
 							<div class="col-xs-2">${curso.codcurso}</div>
 							<div class="col-xs-2">${curso.nomcurso}</div>
-							<div class="btn-group col-xs-2">
-							<a class="btn btn-warning" href="<c:url value='/cursos/${curso.codigo}'/>">Editar</a>
-							<a class="btn btn-danger" href="<c:url value='/cursos/deleteCurso/${curso.codigo}'/>">Borrar</a>
-							</div>
 						</div>
 						</c:forEach>
 					</c:when>
@@ -34,6 +29,16 @@
 						<div class="row"><p class="col-xs-12">No se han encontrado cursos</p></div>
 					</c:otherwise>
 				</c:choose>
+				<form>
+				  <div class="form-group">
+				    <input type="text" class="form-control" id="busqueda">
+				  </div>
+				  <button id="busca" type="button" class="btn btn-default">Buscar</button>
+				</form>
+				<table id="resultado">
+					
+				</table>
+					
 				
 		</div>
 	</main>

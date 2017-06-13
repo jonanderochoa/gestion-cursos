@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.ipartek.formacion.dbms.persistence.Curso;
@@ -34,6 +35,7 @@ public class BuscadorRestController {
 	CursoService cS;
 	
 	/**
+	 * RequestParam es para que no sea necesario pasarle el valor por la URL
 	 * Metodo encargado de mostrar los cursos busqueda por codigo
 	 * @param busqueda Introduce la cadena que desea buscar
 	 * @return Devuelve el o los cursos que coinciden y el codigo http
