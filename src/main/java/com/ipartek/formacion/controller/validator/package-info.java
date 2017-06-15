@@ -1,5 +1,5 @@
 /**
- * Este paquete contiene las validaciones de Spring Security
+ * Este paquete contiene las validaciones
  */
 /**
  * @author Jon Ander Ochoa Ruiz

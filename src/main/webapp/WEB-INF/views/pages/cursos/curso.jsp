@@ -2,8 +2,8 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
-<main>
-	<form:form action="save" method="post" modelAttribute="curso" class="container">
+<main role="main">
+	<form:form action="save" method="post" modelAttribute="curso" class="container" role="form">
 	<c:if test="${!empty curso}">
 		<form:hidden path="codigo" />
 	</c:if>

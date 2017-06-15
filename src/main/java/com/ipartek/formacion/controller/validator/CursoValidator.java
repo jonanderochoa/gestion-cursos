@@ -62,13 +62,13 @@ public class CursoValidator implements Validator {
 		}
 		
 		
-		/*//Valida que el curso sea valido
+		//Valida que el curso no exista
         Curso aux = cS.getByCodigo(curso.getCodcurso());
         if ((curso.getCodcurso() != null && aux != null)
                 || (!curso.equals(aux) && curso.getCodcurso().equalsIgnoreCase(aux.getCodcurso()))) {
             errors.rejectValue("codcurso", "form.codigoExiste", new Object[] { curso.getCodcurso() },
                     "el codigo ya existe en la base de datos");
-        }*/
+        }
 	}
 
 }

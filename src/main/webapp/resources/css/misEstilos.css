@@ -30,4 +30,11 @@ body{
 
 main, footer{
 	padding: 20px 0px 20px 0px;
+	
 }
+
+footer{
+	background-color: grey;
+}
+
+

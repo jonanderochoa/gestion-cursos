@@ -11,7 +11,7 @@
     <http auto-config="true">
         <intercept-url pattern="/" access="permitAll" />
         <intercept-url pattern="/login.html" access="permitAll" />
-        
+        <intercept-url pattern="/cursos*" access="hasRole('ROLE_ADMIN')" />
          
          <!-- Peticion por login, con los parametros y el error que produce en caso de error -->
         <form-login  login-page="/login.html"
@@ -23,7 +23,7 @@
     <authentication-manager>
         <authentication-provider>
             <user-service>
-                <user name="admin" password="admin" authorities="ROLE_ADMIN" />
+                <user name="admin" password="2017#admin" authorities="ROLE_ADMIN" />
             </user-service>
         </authentication-provider>
     </authentication-manager>

@@ -2,7 +2,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 
-	<main class="center">
+	<main class="center" role="main">
 		<div class="container">
 			<header><h2>Cursos</h2></header>
 		</div>

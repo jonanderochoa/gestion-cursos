@@ -29,7 +29,7 @@
 	crossorigin="anonymous">
 
 <!-- Mi CSS. Siempre detras del de bootstrap -->
-<spring:url var="misEstilos" value="/resources/css/styles.css" />
+<spring:url var="misEstilos" value="/resources/css/misEstilos.css" />
 <link rel="stylesheet" href="${misEstilos}" />
 
 <!-- Optional theme -->

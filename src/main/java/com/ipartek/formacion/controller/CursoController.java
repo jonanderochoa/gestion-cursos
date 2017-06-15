@@ -135,4 +135,11 @@ public class CursoController {
 		cS.delete(codigo);
 		return "redirect:/cursos";
 	}
+	
+	
+    @RequestMapping(value = "/cargar")
+    public String cargarCSV(){
+        cS.cargarCSV();
+        return "redirect:/cursos";
+    }
 }

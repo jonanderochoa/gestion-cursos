@@ -13,7 +13,7 @@ import org.springframework.jdbc.core.RowMapper;
 import com.ipartek.formacion.dbms.persistence.Curso;
 
 /**
- * Mapea la tabla de BBDD de los Ejercicios
+ * Mapea la tabla de BBDD de los Cursos
  * @author Jon Ander Ochoa Ruiz
  * 8 de jun. de 2017
  */

@@ -5,6 +5,8 @@
 $(document).ready(function() {
 	//Al pulsar el boton del form
 	$("#busca").on("click", (function(){
+		//Oculta los ultimos 10 cursos
+		$("#diezUltimos").slideUp();
 	    //Guarda el valor del input
 		var busqueda = $("#busqueda").val();
 		//Construimos la url con el parámentro

@@ -26,7 +26,7 @@ import com.ipartek.formacion.dbms.persistence.Curso;
 import com.ipartek.formacion.service.interfaces.CursoService;
 
 /**
- * Handles requests for the application home page.
+ * Controlador de la pagina home
  */
 @Controller
 public class HomeController {

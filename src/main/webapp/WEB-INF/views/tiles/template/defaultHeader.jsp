@@ -3,7 +3,7 @@
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 <%@ taglib prefix="sec"	uri="http://www.springframework.org/security/tags"%>
 	
-<nav class="navbar navbar-inverse">
+<nav class="navbar navbar-inverse" role="navigation">
 	<div class="container-fluid">
 		<!-- ESTO SOLO SE VE EN MOVIL -->
 		<div class="navbar-header">
@@ -15,7 +15,7 @@
 					class="icon-bar"></span>
 			</button>
 			<!-- Logo de la empresa -->
-			<a class="navbar-brand" href="#">Logo de la empresa</a>
+			<a class="navbar-brand" href="www.ipartek.com">Ipartek</a>
 		</div>
 
 		<!-- Collect the nav links, forms, and other content for toggling -->
@@ -23,8 +23,6 @@
 			id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav">
 				<li><a href="/gestioncursos/"><spring:message code="nav.inicio" text="Inicio"/></a></li>
-				<li><a href="#"><spring:message code="nav.Quienes" text="Quienes somos"/></a></li>
-				<li><a href="#"><spring:message code="nav.Contacto" text="Contacto"/></a></li>
 				<li><a href="<c:url value="/cursos" />"><spring:message code="nav.Intranet" text="Intranet"/></a></li>
 			</ul>
 			<!-- LO PONE A LA DERECHA --> 

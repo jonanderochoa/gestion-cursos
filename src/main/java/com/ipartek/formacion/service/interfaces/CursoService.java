@@ -65,4 +65,9 @@ public interface CursoService {
 	 * @param codigo del elemento que desea eliminar
 	 */
 	public void delete(int codigo);
+
+	/**
+	 * Carga la BBDD
+	 */
+	public int cargarCSV();
 }
