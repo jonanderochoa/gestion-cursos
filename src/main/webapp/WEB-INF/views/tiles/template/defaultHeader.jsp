@@ -23,7 +23,7 @@
 			id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav">
 				<li><a href="/gestioncursos/"><spring:message code="nav.inicio" text="Inicio"/></a></li>
-				<li><a href="<c:url value="/cursos" />"><spring:message code="nav.Intranet" text="Intranet"/></a></li>
+				<li><a href= "<c:url value='/cursos/cargar'/>"> CARGAR BBDD</a></li>
 			</ul>
 			<!-- LO PONE A LA DERECHA --> 
 			<ul class="nav navbar-nav navbar-right">
@@ -40,7 +40,7 @@
 					<li><a href="<c:url value="/logout" />"><spring:message code="nav.Logout" text="Cerrar Sesión"/></a></li>
 				</sec:authorize>
 				<sec:authorize access="isAnonymous()">
-					<li><a href="<c:url value='/login.html' />"><spring:message code="nav.Login" text="Iniciar Sesión"/></a></li>
+					<li><a href="<c:url value='/cursos' />"><spring:message code="nav.Login" text="Iniciar Sesión"/></a></li>
 				</sec:authorize>
 			</ul>  
 		</div>

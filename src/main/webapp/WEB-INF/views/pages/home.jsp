@@ -9,8 +9,8 @@
 		<div class="container-fluid text-center">
 		
 			<div class="row">
-		        <a class="btn btn-info col-xs-1" href= "<c:url value='/cursos/cargar'/>"> CARGAR CSV </a>   
-		    </div>
+		        
+		    
 			<P>  The time on the server is ${serverTime}. </P>
 			<div id="cabecera" class="row">
 					<div class="col-xs-2">Código del curso</div>
@@ -35,6 +35,7 @@
 				<div role="search">
 					<form role="form">
 			  			<div class="form-group">
+			  				<label role="">Introduzca el Nombre del curso que quiere buscar</label>
 			    			<input type="text" class="form-control" id="busqueda">
 			  			</div>
 			  			<button  role="button" id="busca" type="button" class="btn btn-default">Buscar</button>
@@ -42,10 +43,9 @@
 					<div id="buscador">
 						<table id="resultado">
 							<caption>Busqueda</caption>
-						
 						</table>
 					</div>
 				</div>
-			
+				</div>
 		</div>
 	</main>

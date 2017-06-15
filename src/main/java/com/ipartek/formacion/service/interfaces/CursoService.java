@@ -67,7 +67,7 @@ public interface CursoService {
 	public void delete(int codigo);
 
 	/**
-	 * Carga la BBDD
+	 * Carga la BBDD desde el CSV
 	 */
 	public int cargarCSV();
 }

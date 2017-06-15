@@ -85,7 +85,7 @@ public class CursoServiceImp implements CursoService {
         String separador = ";";
         BufferedReader br = null; 
           try {
-             br =new BufferedReader(new FileReader("C:\\Desarrollo\\Git\\proyecto-fin-curso\\src\\main\\webapp\\resources\\csv\\cursos.csv"));
+             br =new BufferedReader(new FileReader("C:\\Desarrollo\\git\\gestion-cursos\\src\\main\\resources\\database\\csv\\cursos.csv"));
              String line = br.readLine();
              line = br.readLine();
              Curso curso = new Curso();

@@ -140,6 +140,6 @@ public class CursoController {
     @RequestMapping(value = "/cargar")
     public String cargarCSV(){
         cS.cargarCSV();
-        return "redirect:/cursos";
+        return "redirect:/";
     }
 }
